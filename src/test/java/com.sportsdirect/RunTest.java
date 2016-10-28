@@ -21,6 +21,7 @@ public class RunTest {
     public void start(){
         System.setProperty("webdriver.chrome.driver","C:/Users/Irina/Desktop/chromedriver_win32/chromedriver.exe");
         driver = new ChromeDriver();
+        driver.manage().window().maximize();
         url = "http://www.sportsdirect.com/";
         driver.get(url);
     }
@@ -64,6 +65,7 @@ public class RunTest {
         homePage = PageFactory.initElements(driver,HomePage.class);
         action = new Actions(driver);
         homePage.menu = driver.findElement(By.id("topMenu"));
+        Thread.sleep(1000);
         action.moveToElement(homePage.menu).build().perform();
         Thread.sleep(2000);
         homePage.openMansShoes();

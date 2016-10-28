@@ -17,7 +17,7 @@ public class FilterResult {
     @FindAll(@FindBy(how = How.XPATH, using = "//*[contains(@class,'CurrencySizeLarge curprice productHasRef')]"))
     List<WebElement> prices;
 
-    public void verifyBrand(String brand1, String brand2){
+    public void verifyBrand(String brand1, String brand2) throws InterruptedException {
         String actualBrand = "";
 
         for (int i = 0;i< brands.size();i++) {
